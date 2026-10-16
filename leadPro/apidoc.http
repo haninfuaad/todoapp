@@ -1,0 +1,84 @@
+# api call for lead create
+###
+POST http://127.0.0.1:8000/lead
+Content-Type: application/json
+Authorization: Basic mhf13:mhf123
+
+{
+    "name":"sonu",
+    "phone":7999999999,
+    "email":"sj@gmail.com",
+    "course":"python",
+    "sourse":"website",
+    "status":"new",
+    "notes":"eveng batch preferance"
+}
+
+# api callfor list all leads
+###
+GET http://127.0.0.1:8000/lead
+Authorization: Basic mhf13:mhf123
+
+# api call to update lead data
+###
+PUT http://127.0.0.1:8000/lead/detail/1
+Content-Type: application/json
+Authorization: Basic mhf13:mhf123
+
+{
+    "name":"anu",
+    "phone":9999999999,
+    "email":"s@gmail.com",
+    "course":"python",
+    "sourse":"website",
+    "status":"contacted",
+    "notes":"eveng batch preferance"
+}
+
+# api call for delete a lead data
+###
+DELETE http://127.0.0.1:8000/lead/detail/1
+Authorization: Basic mhf13:mhf123
+
+
+# api call for status list
+###
+GET http://127.0.0.1:8000/lead/detail/status
+
+
+# api call for ordering leads on name
+###
+GET http://127.0.0.1:8000/lead?ordering=name
+Authorization: Basic mhf13:mhf123
+
+
+# ordering on addedad date on ascendeing
+
+###
+GET http://127.0.0.1:8000/lead?ordering=added_date
+Authorization: Basic mhf13:mhf123
+
+# in descending
+###
+GET http://127.0.0.1:8000/lead?ordering=-added_date
+Authorization: Basic mhf13:mhf123
+
+# ordering based on status
+###
+GET http://127.0.0.1:8000/lead?search=new
+Authorization: Basic mhf13:mhf123
+
+# ordering based on status
+###
+GET http://127.0.0.1:8000/lead?search=contacted
+Authorization: Basic mhf13:mhf123
+
+# ordering based on status
+###
+GET http://127.0.0.1:8000/lead?search=referral new
+Authorization: Basic mhf13:mhf123
+
+# ordering based on status
+###
+GET http://127.0.0.1:8000/lead?search=new&search=referral
+Authorization: Basic mhf13:mhf123
